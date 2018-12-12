@@ -3,14 +3,17 @@
 <head>
   <title>Marathon Jack</title>
   <h1>Marathon Jack</h1>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
   <link type="text/css" rel="stylesheet" href="template.css">
   <script type="text/javascript" src="main.js"></script>
 </head>
 
-<body>
+<body onload="GiveCardInit()"> >
   <div id="myDiv" class="superpose">
 </div>
 <button class="button" id="donnezcarte">Card</button>
-<button>Stay</button>
-<button>Start Again</button>
+<button id="noCard">Stay</button>
+<button id="restart">Start Again</button>
 </body>
