@@ -10,7 +10,9 @@ $("#donnezcarte").click(function (img,imgprint) {
 ///dont les valeurs vont de 0 a 51 (de 1 a 52 cartes),
 /// Ne serait-il pas plus judicieux de créer des listes de liste en fonction des symboles de cartes
 /// Et ainsi d'attribuer directement une valeur a chaque carte en faisant de random successif sur chaque liste
-
+/// Il faut aussi penser que systematiquement le random prendra une valeur de moins puisque la lsite aura un index de moins
+///Faudra également mettre le Jquery dela prémière fonction en JS pur, parce que j'en ai parlé avec lui et il aime pas.
+///Du coup j'ai exporté les libs pour le moment mais voila quoi ...
 function GiveCardInit () {
   var img = ["./img/1.BMP","./img/2.BMP","./img/3.BMP","./img/4.BMP","./img/5.BMP","./img/6.BMP"]
   for (i=1;i=2;i++);
