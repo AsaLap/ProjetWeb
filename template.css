@@ -1,0 +1,23 @@
+.superpose {
+  position: absolute;
+  top: 25%;
+  left:45%;
+}
+
+.superpose2 {
+  position: absolute;
+  left: 45%;
+  top: 65%;
+}
+
+body {
+  background-image: url("./img/table.png");
+  background-repeat: no-repeat;
+  background-size: 1400px;
+  background-position: center center;
+}
+
+.button {
+  margin-left: 42%;
+  margin-top: 45%
+}
