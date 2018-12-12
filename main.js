@@ -4,36 +4,41 @@ $("#donnezcarte").click(function (img,imgprint) {
   var removedimg = img.splice(pos, imgprint)
   addImgInDiv(Imageprinter);
   return img
-
 });
 
-function addImgInDiv() {
-  varnewImg=createImg(Imageprinter);
+///Pour l'instant on crée ici une seule lsite contenant toutes les cartes
+///dont les valeurs vont de 0 a 51 (de 1 a 52 cartes),
+/// Ne serait-il pas plus judicieux de créer des listes de liste en fonction des symboles de cartes
+/// Et ainsi d'attribuer directement une valeur a chaque carte en faisant de random successif sur chaque liste
+
+function GiveCardInit () {
+  var img = ["./img/1.BMP","./img/2.BMP","./img/3.BMP","./img/4.BMP","./img/5.BMP","./img/6.BMP"]
+  for (i=1;i=2;i++);
+    getRandomIntInclusive(1,52);
+    var Imageprinter = img[imgprint];
+    var removedimg = img.splice(pos, imgprint)
+    addImgInDiv(Imageprinter,);
+  return img
+}
+
+function addImgInDiv('myDiv',Imageprinter) {
+  var newImg=createImg(Imageprinter);
   var divJS=getElementById('myDiv');
   divJS.appendChild(newImg)
 }
 
+
 function createImg(Imageprinter) {
   var img = document.createElement('img');
   img.src=Imageprinter;
-  return img;
-}
-
-function getRandomIntInclusive(1, 52) {
-  1 = Math.ceil(1);
-  52 = Math.floor(52);
-  val=Math.floor(Math.random() * (52 - 1 +1)) + 1;
-  val - 1 = imgprint;
-  return imgprint;
-}
-
-
-function GiveCardInit () {
-  var img = ["./img/1.BMP","./img/2.BMP","./img/3.BMP","./img/4.BMP","./img/5.BMP","./img/6.BMP"]
-  for (1,2,1)
-    getRandomIntInclusive(1,52);
-    var Imageprinter = img[imgprint];
-    var removedimg = img.splice(pos, imgprint)
-    addImgInDiv(Imageprinter);
   return img
+}
+
+
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  val=Math.floor(Math.random() * (max - min +min)) + min;
+  val - 1 = imgprint;
+  return imgprint
 }
