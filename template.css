@@ -1,4 +1,30 @@
-.superpose {
+h1 {
+  text-align: center;
+  margin-top: 0px
+}
+
+.button {
+  text-align: center;
+  margin: 5px;
+}
+
+/* Il faut régler la taille de la div et du background en fonction de la taille de la fenêtre (responsive)
+Cf : https://forum.alsacreations.com/topic-4-71386-1-Comment-avoir-un-div-de-la-taille-dun-ecranresolution-.html pour la fonction JS */
+.cards {
+  background-image: url("./img/table.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 650px;
+  height: 400px;
+  text-align: center
+}
+
+/* Il faudra gérer la position en fonction des autres cartes donc de façon relative et non fixe */
+#firstImage {
+  padding-top: 200px;
+}
+
+/* .superpose {
   position: absolute;
   top: 25%;
   left:45%;
@@ -8,16 +34,4 @@
   position: absolute;
   left: 45%;
   top: 65%;
-}
-
-body {
-  background-image: url("./img/table.png");
-  background-repeat: no-repeat;
-  background-size: 1400px;
-  background-position: center center;
-}
-
-.button {
-  margin-left: 42%;
-  margin-top: 45%
-}
+} */
