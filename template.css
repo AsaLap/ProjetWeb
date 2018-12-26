@@ -13,22 +13,13 @@ h1 {
   background-repeat: no-repeat;
   background-position: center;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   /* background-size et height gérés par le JS */
 }
 
-/* Il faudra gérer la position en fonction des autres cartes donc de façon relative et non fixe */
-#firstImage {
-  padding-top: 200px;
+#cards {
+  display: flex;
+  justify-content: center;
 }
-
-/* .superpose {
-  position: absolute;
-  top: 25%;
-  left:45%;
-}
-
-.superpose2 {
-  position: absolute;
-  left: 45%;
-  top: 65%;
-} */
