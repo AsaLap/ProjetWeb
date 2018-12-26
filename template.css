@@ -3,20 +3,17 @@ h1 {
   margin-top: 0px
 }
 
-.button {
+.buttons {
   text-align: center;
   margin: 5px;
 }
 
-/* Il faut régler la taille de la div et du background en fonction de la taille de la fenêtre (responsive)
-Cf : https://forum.alsacreations.com/topic-4-71386-1-Comment-avoir-un-div-de-la-taille-dun-ecranresolution-.html pour la fonction JS */
-.cards {
+#desk {
   background-image: url("./img/table.png");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 650px;
-  height: 400px;
-  text-align: center
+  text-align: center;
+  /* background-size et height gérés par le JS */
 }
 
 /* Il faudra gérer la position en fonction des autres cartes donc de façon relative et non fixe */
