@@ -1,11 +1,14 @@
-// Modifier la fonction pour que le tout soit en fonction de la diagonale et pas seulement la hauteur (problème si page haute mais fine)
+// Fonction modification la taille des items en fonction de la taille de la page internet
 var resizeHeight = function(){
-  desk = document.getElementById('desk');
-  cards = document.getElementById('cards');
   var sH = window.innerHeight;
-  desk.style.height = sH*80/100 + 'px';
-  desk.style.backgroundSize = sH+0.4*sH + 'px';
-  cards.style.paddingTop = sH/10 + 'px'; //Permet d'espacer les deux items flex dealerCards et Cards
+  var sW = window.innerWidth;
+  var mean = (sH + sW) / 2;
+  desk.style.height = mean*50/100 + 'px';
+  desk.style.backgroundSize = mean*80/100 + 'px';
+  cards.style.paddingTop = mean/20 + 'px'; //Permet d'espacer les deux items flexs dealerCards et Cards
+  cards.style.height = (mean*50/100)/5 + 'px';
+  dealerCards.style.height = (mean*50/100)/5 + 'px';
+  return mean;
 }
 
 // changer l'appel pour être responsive en cas de redimensionnement de fenêtre

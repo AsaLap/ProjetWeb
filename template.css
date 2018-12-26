@@ -8,6 +8,11 @@ h1 {
   margin: 5px;
 }
 
+.cards {
+  height: inherit;
+}
+
+
 #desk {
   background-image: url("./img/table.png");
   background-repeat: no-repeat;
@@ -20,6 +25,11 @@ h1 {
 }
 
 #cards {
+  display: flex;
+  justify-content: center;
+}
+
+#dealerCards {
   display: flex;
   justify-content: center;
 }
