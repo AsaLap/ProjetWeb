@@ -24,7 +24,7 @@ h1 {
   /* background-size et height gérés par le JS */
 }
 
-#cards {
+#playerCards {
   display: flex;
   justify-content: center;
 }

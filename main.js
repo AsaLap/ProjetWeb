@@ -5,8 +5,8 @@ var resizeHeight = function(){
   var mean = (sH + sW) / 2;
   desk.style.height = mean*50/100 + 'px';
   desk.style.backgroundSize = mean*80/100 + 'px';
-  cards.style.paddingTop = mean/20 + 'px'; //Permet d'espacer les deux items flexs dealerCards et Cards
-  cards.style.height = (mean*50/100)/5 + 'px';
+  playerCards.style.paddingTop = mean/20 + 'px'; //Permet d'espacer les deux items flexs dealerCards et Cards
+  playerCards.style.height = (mean*50/100)/5 + 'px';
   dealerCards.style.height = (mean*50/100)/5 + 'px';
   return mean;
 }
@@ -14,12 +14,26 @@ var resizeHeight = function(){
 // changer l'appel pour être responsive en cas de redimensionnement de fenêtre
 window.onload = resizeHeight;
 
-// Fonction JQuery modification de classe (aller sur OpenClassroom pour créer une fonction de modification de classe)
-// $(function() {
-//   // Sections height
-//   $(window).resize(function() {
-//     var sH = $(window).height();
-//     $('.desk').css('height', sH + 'px');
-//     console.log(sH);
-//   });
-// });
+//On chope l'id de la div dans laquelle on va insérer l'image
+var conteneur = document.getElementById('playerCards');
+//Création de l'objet html à insérer
+var element = document.createElement('img');
+//Définition de la source de l'image (en fonction de x normalement)
+element.src = "img/8.BMP";
+// element.class('cards'); //Attribuer la class "cards" à la carte nouvellement créée
+//Attribution du tout à la div
+conteneur.appendChild(element);
+
+
+// fonction tirage de carte(compteur Joueur ou Dealer,id de la div du joueur ou du dealer)
+// x = random(1;13);
+// nbAlea = x + random(4) * 13;
+// if nbAlea is not in listeDejaTirees{
+//    listeDejaTirees.append(nbAlea);
+//    compteur += x;
+//    creer une img avec le numéro de la carte nbAlea;
+//    return x;
+// }
+// else{
+//    on refait;
+// }
