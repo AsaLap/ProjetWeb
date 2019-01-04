@@ -1,4 +1,4 @@
-// Fonction modification la taille des items en fonction de la taille de la page internet
+// Fonction modifiant la taille des items en fonction de la taille de la page internet
 var resizeHeight = function(){
   var sH = window.innerHeight;
   var sW = window.innerWidth;
@@ -11,18 +11,30 @@ var resizeHeight = function(){
   return mean;
 }
 
-// changer l'appel pour être responsive en cas de redimensionnement de fenêtre
-window.onload = resizeHeight;
+function tirageCarte(id){
+  //Première partie de la fonction : détermination aléatoire d'une carte
+  let x = 5;
+  //Deuxième partie, création de la carte sur le plateau de jeu
+  var division = document.getElementById(id);
+  var carte = document.createElement('img');
+  carte.src = "img/"+x.toString()+".BMP";
+  carte.className = "cards";
+  division.appendChild(carte);
+}
 
-//On chope l'id de la div dans laquelle on va insérer l'image
-var conteneur = document.getElementById('playerCards');
-//Création de l'objet html à insérer
-var element = document.createElement('img');
-//Définition de la source de l'image (en fonction de x normalement)
-element.src = "img/8.BMP";
-// element.class('cards'); //Attribuer la class "cards" à la carte nouvellement créée
-//Attribution du tout à la div
-conteneur.appendChild(element);
+function listeners(){
+  card.addEventListener('click',tirageCarte("playerCards"));
+  console.log("test");
+  // stay.addEventListener("click",);
+  // startAgain.addEventListener("click",);
+}
+
+// <!--- MAIN --->
+window.onload = resizeHeight;
+var card = document.getElementById("donnezcarte");
+var stay = document.getElementById("noCard");
+var startAgain = document.getElementById("restart");
+listeners();
 
 
 // fonction tirage de carte(compteur Joueur ou Dealer,id de la div du joueur ou du dealer)

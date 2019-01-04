@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <title>Marathon Jack</title>
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script> -->
-  <link type="text/css" rel="stylesheet" href="template.css">
-</head>
-<body>
-  <h1>Marathon Jack</h1>
-  <div id="desk">
-    <div id="dealerCards">
-      <img src="img/8.BMP" class="cards"/>
-      <img src="img/5.BMP" class="cards"/>
+  <head>
+    <title>Marathon Jack</title>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script> -->
+    <link type="text/css" rel="stylesheet" href="template.css">
+  </head>
+  <body>
+    <h1>Marathon Jack</h1>
+    <div id="desk">
+      <div id="dealerCards">
+        <img src="img/8.BMP" class="cards"/>
+        <img src="img/5.BMP" class="cards"/>
+      </div>
+      <div id="playerCards"> <!-- Flexbox -->
+        <img src="img/1.BMP" class="cards"/>
+        <img src="img/2.BMP" class="cards"/>
+      </div>
     </div>
-    <div id="playerCards"> <!-- Flexbox -->
-      <img src="img/1.BMP" class="cards"/>
-      <img src="img/2.BMP" class="cards"/>
+    <div class="buttons">
+      <button id="donnezcarte">Card</button>
+      <button id="noCard">Stay</button>
+      <button id="restart">Start Again</button>
     </div>
-  </div>
-  <div class="buttons">
-    <button id="donnezcarte">Card</button>
-    <button id="noCard">Stay</button>
-    <button id="restart">Start Again</button>
-  </div>
-</body>
-<script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+  </body>
+</html>
