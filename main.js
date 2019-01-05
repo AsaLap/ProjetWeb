@@ -11,20 +11,37 @@ var resizeHeight = function(){
   return mean;
 }
 
-function tirageCarte(id){
-  //Première partie de la fonction : détermination aléatoire d'une carte
-  let x = 5;
-  //Deuxième partie, création de la carte sur le plateau de jeu
-  var division = document.getElementById(id);
-  var carte = document.createElement('img');
-  carte.src = "img/"+x.toString()+".BMP";
-  carte.className = "cards";
-  division.appendChild(carte);
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min +1)) + min;
 }
 
-function listeners(){
+function tirageCarte(id){
+  let var1 = getRandomIntInclusive(0,3);
+  let valCarte = getRandomIntInclusive(1,13);
+  let indexImg = valCarte+13*var1;
+  if (listeIndexImg.indexOf(indexImg) == -1) {
+    listeIndexImg.push(indexImg);
+    var division = document.getElementById(id);
+    var carte = document.createElement('img');
+    carte.src = "img/"+indexImg.toString()+".BMP";
+    carte.className = "cards";
+    division.appendChild(carte);
+  } else {
+    tirageCarte(id);
+  }
+  return valCarte;
+}
+
+// function stay(){}
+
+
+// function startAgain(){}
+
+
+function listeners(){ //debuguer cette merde
   card.addEventListener('click',tirageCarte("playerCards"));
-  console.log("test");
   // stay.addEventListener("click",);
   // startAgain.addEventListener("click",);
 }
@@ -34,18 +51,9 @@ window.onload = resizeHeight;
 var card = document.getElementById("donnezcarte");
 var stay = document.getElementById("noCard");
 var startAgain = document.getElementById("restart");
-listeners();
-
-
-// fonction tirage de carte(compteur Joueur ou Dealer,id de la div du joueur ou du dealer)
-// x = random(1;13);
-// nbAlea = x + random(4) * 13;
-// if nbAlea is not in listeDejaTirees{
-//    listeDejaTirees.append(nbAlea);
-//    compteur += x;
-//    creer une img avec le numéro de la carte nbAlea;
-//    return x;
-// }
-// else{
-//    on refait;
-// }
+var listeIndexImg = Array();
+var dealerCompteur = 0;
+var playerCompteur = 0;
+playerCompteur += tirageCarte("playerCards");
+dealerCompteur += tirageCarte("dealerCards");
+// listeners();
