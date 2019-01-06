@@ -21,6 +21,9 @@ function tirageCarte(id){
   let var1 = getRandomIntInclusive(0,3);
   let valCarte = getRandomIntInclusive(1,13);
   let indexImg = valCarte+13*var1;
+  if (valCarte > 10){
+    valCarte = 10;
+  }
   if (listeIndexImg.indexOf(indexImg) == -1) {
     listeIndexImg.push(indexImg);
     var division = document.getElementById(id);
@@ -28,22 +31,58 @@ function tirageCarte(id){
     carte.src = "img/"+indexImg.toString()+".BMP";
     carte.className = "cards";
     division.appendChild(carte);
+    if (id == "playerCards"){
+      playerCompteur+=valCarte;
+    } else {
+      dealerCompteur+=valCarte;
+    }
   } else {
     tirageCarte(id);
   }
-  return valCarte;
+  //créer ici le changement d'affichage des valeurs
+
+  if (playerCompteur == 42){
+    window.alert("Gagné !!")
+  } else if (playerCompteur > 42){
+    window.alert("Perdu !!");
+  } else if (dealerCompteur == 42){
+    window.alert("Perdu !!");
+  } else if (dealerCompteur > 42){
+    window.alert("Gagné !!");
+  }
+  console.log(valCarte);
+  console.log(playerCompteur);
+  console.log(dealerCompteur);
 }
 
-// function stay(){}
+function staying(){
+  while (dealerCompteur <= playerCompteur){
+    tirageCarte("dealerCards");
+  }
+  comptage();
+}
+
+function comptage(){
+  if (dealerCompteur < 42 && playerCompteur < 42){
+    if (dealerCompteur > playerCompteur){
+      window.alert("Perdu !");
+    } else if (dealerCompteur < playerCompteur){
+      window.alert("Gagné !");
+    }
+  }
+}
+function startingAgain(){
+  //tout remettre à zéro et vider les div de cartes
+  listeIndexImg = Array();
+  dealerCompteur = 0;
+  playerCompteur = 0;
+}
 
 
-// function startAgain(){}
-
-
-function listeners(){ //debuguer cette merde
-  card.addEventListener('click',tirageCarte("playerCards"));
-  // stay.addEventListener("click",);
-  // startAgain.addEventListener("click",);
+function listeners(){
+  card.addEventListener('click',function(){tirageCarte("playerCards")});
+  stay.addEventListener("click",function(){staying()});
+  startAgain.addEventListener("click",function(){startingAgain()});
 }
 
 // <!--- MAIN --->
@@ -54,6 +93,5 @@ var startAgain = document.getElementById("restart");
 var listeIndexImg = Array();
 var dealerCompteur = 0;
 var playerCompteur = 0;
-playerCompteur += tirageCarte("playerCards");
-dealerCompteur += tirageCarte("dealerCards");
-// listeners();
+tirageCarte("dealerCards");
+listeners();
