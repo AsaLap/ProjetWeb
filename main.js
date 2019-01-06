@@ -3,11 +3,13 @@ var resizeHeight = function(){
   var sH = window.innerHeight;
   var sW = window.innerWidth;
   var mean = (sH + sW) / 2;
+  var info = document.getElementById('playerInfo').innerHeight;
   desk.style.height = mean*50/100 + 'px';
   desk.style.backgroundSize = mean*80/100 + 'px';
-  playerCards.style.paddingTop = mean/20 + 'px'; //Permet d'espacer les deux items flexs dealerCards et Cards
+  playerCards.style.paddingTop = mean/20-info + 'px'; //Permet d'espacer les deux items flexs dealerCards et Cards
   playerCards.style.height = (mean*50/100)/5 + 'px';
   dealerCards.style.height = (mean*50/100)/5 + 'px';
+  playerInfo.style.paddingTop = mean/20-info*2 + 'px';
   return mean;
 }
 
@@ -40,6 +42,10 @@ function tirageCarte(id){
     tirageCarte(id);
   }
   //créer ici le changement d'affichage des valeurs
+  document.getElementById('pointsJoueur').innerHTML ="Les points du joueur : "+playerCompteur.toString();
+  document.getElementById('pointsDealer').innerHTML = "Les points du dealer : "+dealerCompteur.toString();
+
+
 
   if (playerCompteur == 42){
     window.alert("Gagné !!")
@@ -72,10 +78,7 @@ function comptage(){
   }
 }
 function startingAgain(){
-  //tout remettre à zéro et vider les div de cartes
-  listeIndexImg = Array();
-  dealerCompteur = 0;
-  playerCompteur = 0;
+  window.location.reload();
 }
 
 
