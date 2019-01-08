@@ -22,8 +22,35 @@ var span = document.getElementsByClassName("close")[0];
 
 setTimeout(function() {
     $("#myModal").fadeOut();
-}, 2000);
+}, 1000);
 
 $("#play").click(function(){
   console.log("coucou");
 });
+
+
+function addImgInDiv(path,id) {
+  var img=document.createElement('img');
+  img.src=path;
+  div=document.getElementById(id);
+  div.appendChild(img);
+}
+
+function modalInit(){
+  var modal = document.getElementById('modalWin');
+  // Get the image and insert it inside the modal - use its "alt" text as a caption
+  var modalImg = document.getElementById("img01");
+  var captionText = document.getElementById("caption");
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+  setTimeout(function() {
+      $("#modalWin").fadeOut();
+  }, 2000);
+  document.body.removeChild(img);
+  divButton = document.getElementById('buttonz');
+  buttonCard = document.getElementById('donnezcarte');
+  buttonStay = document.getElementById('noCard');
+  divButton.removeChild(buttonCard);
+  divButton.removeChild(buttonStay);
+}
