@@ -25,6 +25,5 @@ setTimeout(function() {
 }, 2000);
 
 $("#play").click(function(){
-  $("#audio").play();
   console.log("coucou");
 });
