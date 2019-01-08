@@ -60,11 +60,35 @@ function staying(){
   comptage();
 }
 
+function addImgInDiv(path,id) {
+  var img=document.createElement('img');
+  img.src=path;
+  div=document.getElementById(id);
+  div.appendChild(img);
+}
+
+function modalInit(){
+  var modal = document.getElementById('modalWin');
+  // Get the image and insert it inside the modal - use its "alt" text as a caption
+  //var img = document.getElementById('myImg');
+  var modalImg = document.getElementById("img01");
+  var captionText = document.getElementById("caption");
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+  setTimeout(function() {
+      $("#modalWin").fadeOut();
+  }, 2000);
+  //document.body.removeChild(img);
+}
+
+
 function comptage(){
   if (playerCompteur == 42) {
-      window.alert("Gagné !");
+    window.alert("Gagné !");
   } else if (playerCompteur > 42) {
-      window.alert("Perdu !");
+      addImgInDiv("img/perdu.jpg","modalWin")
+      modalInit()
   } else if (dealerCompteur == 42) {
       window.alert("Perdu !");
   } else if (dealerCompteur > 42) {
@@ -89,6 +113,7 @@ function listeners(){
 
 // <!--- MAIN --->
 window.onload = resizeHeight;
+window.onresize=resizeHeight;
 var card = document.getElementById("donnezcarte");
 var stay = document.getElementById("noCard");
 var startAgain = document.getElementById("restart");
