@@ -42,19 +42,11 @@ function tirageCarte(id){
     tirageCarte(id);
   }
   //créer ici le changement d'affichage des valeurs
-  document.getElementById('pointsJoueur').innerHTML ="Les points du joueur : "+playerCompteur.toString();
-  document.getElementById('pointsDealer').innerHTML = "Les points du dealer : "+dealerCompteur.toString();
+  document.getElementById('pointsDealer').innerHTML = "The dealer has "+dealerCompteur.toString()+" points.";
+  document.getElementById('pointsJoueur').innerHTML =" You have "+playerCompteur.toString()+" points. Card or stay ?";
 
-
-
-  if (playerCompteur == 42){
-    window.alert("Gagné !!")
-  } else if (playerCompteur > 42){
-    window.alert("Perdu !!");
-  } else if (dealerCompteur == 42){
-    window.alert("Perdu !!");
-  } else if (dealerCompteur > 42){
-    window.alert("Gagné !!");
+  if (playerCompteur >= 42){
+    comptage();
   }
   console.log(valCarte);
   console.log(playerCompteur);
@@ -69,14 +61,21 @@ function staying(){
 }
 
 function comptage(){
-  if (dealerCompteur < 42 && playerCompteur < 42){
-    if (dealerCompteur > playerCompteur){
-      window.alert("Perdu !");
-    } else if (dealerCompteur < playerCompteur){
+  if (playerCompteur == 42) {
       window.alert("Gagné !");
-    }
+  } else if (playerCompteur > 42) {
+      window.alert("Perdu !");
+  } else if (dealerCompteur == 42) {
+      window.alert("Perdu !");
+  } else if (dealerCompteur > 42) {
+      window.alert("Gagné !");
+  } else if (dealerCompteur > playerCompteur){
+      window.alert("Perdu !");
+  } else if (dealerCompteur < playerCompteur){
+      window.alert("Gagné !");
   }
 }
+
 function startingAgain(){
   window.location.reload();
 }
@@ -96,5 +95,6 @@ var startAgain = document.getElementById("restart");
 var listeIndexImg = Array();
 var dealerCompteur = 0;
 var playerCompteur = 0;
+tirageCarte("playerCards");
 tirageCarte("dealerCards");
 listeners();
