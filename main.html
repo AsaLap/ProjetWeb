@@ -2,13 +2,21 @@
 <html lang="fr">
   <head>
     <title>Marathon Jack</title>
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <link type="text/css" rel="stylesheet" href="template.css">
+    <link type="text/css" rel="stylesheet" href="modal_image.css">
   </head>
   <body>
     <h1>Marathon Jack</h1>
+    <img id="myImg" src="Icone/logo.svg" <img src="image" style="visibility:hidden" class=center>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
     <div id="desk">
       <p class="infos">Dealer's Cards</p>
       <div id="dealerCards">
@@ -26,6 +34,7 @@
       <button id="noCard">Stay</button>
       <button id="restart">Start Again</button>
     </div>
+    <script type="text/javascript" src="script.js"></script>
     <script type="text/javascript" src="main.js"></script>
   </body>
 </html>
