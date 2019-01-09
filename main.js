@@ -6,10 +6,8 @@ var resizeHeight = function(){
   var info = document.getElementById('playerInfo').innerHeight;
   desk.style.height = mean*50/100 + 'px';
   desk.style.backgroundSize = mean*80/100 + 'px';
-  playerCards.style.paddingTop = mean/20-info + 'px'; //Permet d'espacer les deux items flexs dealerCards et Cards
   playerCards.style.height = (mean*50/100)/5 + 'px';
   dealerCards.style.height = (mean*50/100)/5 + 'px';
-  playerInfo.style.paddingTop = mean/20-info*2 + 'px';
   return mean;
 }
 

@@ -6,7 +6,7 @@ body {
 
 h1 {
   text-align: center;
-  margin-top: 0px;
+  color: #ffd700;
 }
 
 
@@ -15,12 +15,15 @@ h1 {
 }
 
 .infos {
-  margin: 0px;
+  margin: 5px;
+  color: #e0e0e0;
 }
 
 .points {
   text-align: center;
   margin: 5px;
+  color: white;
+  font-size: 20px;
 }
 
 .buttons {
@@ -47,6 +50,7 @@ h1 {
 #dealerCards {
   display: flex;
   justify-content: center;
+
 }
 
 
