@@ -41,7 +41,6 @@ function tirageCarte(id){
   } else {
     tirageCarte(id);
   }
-  //créer ici le changement d'affichage des valeurs
   document.getElementById('pointsDealer').innerHTML = "The dealer has "+dealerCompteur.toString()+" points.";
   document.getElementById('pointsJoueur').innerHTML =" You have "+playerCompteur.toString()+" points. Card or stay ?";
 
@@ -60,32 +59,51 @@ function staying(){
   comptage();
 }
 
-function comptage(){
-  if (playerCompteur == 42) {
-    addImgInDiv("img/gagner.png","modalWin")
-    modalInit()
-  } else if (playerCompteur > 42) {
-      addImgInDiv("img/perdu.jpg","modalWin")
-      modalInit()
-  } else if (dealerCompteur == 42) {
-      addImgInDiv("img/perdu.jpg","modalWin")
-      modalInit()
-  } else if (dealerCompteur > 42) {
-      addImgInDiv("img/gagner.png","modalWin")
-      modalInit()
-  } else if (dealerCompteur > playerCompteur){
-      addImgInDiv("img/perdu.jpg","modalWin")
-      modalInit()
-  } else if (dealerCompteur < playerCompteur){
-      addImgInDiv("img/gagner.png","modalWin")
-      modalInit()
-  }
-}
-
 function startingAgain(){
   window.location.reload();
 }
 
+function comptage(){
+  if (playerCompteur == 42) {
+    modal("img/gagner.png");
+    removeButtons();
+  } else if (playerCompteur > 42) {
+      modal("img/perdu.jpg");
+      removeButtons();
+  } else if (dealerCompteur == 42) {
+      modal("img/perdu.jpg");
+      removeButtons();
+  } else if (dealerCompteur > 42) {
+      modal("img/gagner.png");
+      removeButtons();
+  } else if (dealerCompteur > playerCompteur){
+      modal("img/perdu.jpg");
+      removeButtons();
+  } else if (dealerCompteur < playerCompteur){
+      modal("img/gagner.png");
+      removeButtons();
+  }
+}
+
+// Fonction créant une image modale
+function modal(src){
+  var modal = document.getElementById('myModal');
+  var modalImg = document.getElementById("img01");
+  var captionText = document.getElementById("caption");
+  modal.style.display = "block";
+  modalImg.src = src;
+  setTimeout(function() {
+    $("#myModal").fadeOut();
+  }, 1000);
+}
+
+function removeButtons(){
+  divButton = document.getElementById('buttonz');
+  buttonCard = document.getElementById('donnezcarte');
+  buttonStay = document.getElementById('noCard');
+  divButton.removeChild(buttonCard);
+  divButton.removeChild(buttonStay);
+}
 
 function listeners(){
   card.addEventListener('click',function(){tirageCarte("playerCards")});
@@ -105,3 +123,4 @@ var playerCompteur = 0;
 tirageCarte("playerCards");
 tirageCarte("dealerCards");
 listeners();
+modal("img/Blackjack.jpg");
