@@ -24,6 +24,9 @@ function tirageCarte(id){
   if (valCarte > 10){
     valCarte = 10;
   }
+  if (valCarte == 1 && playerCompteur < 33){
+    valCarte = 10;
+  }
   if (listeIndexImg.indexOf(indexImg) == -1) {
     listeIndexImg.push(indexImg);
     var division = document.getElementById(id);
